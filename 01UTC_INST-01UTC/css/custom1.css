@@ -267,7 +267,7 @@ prm-brief-result .item-title span {
 
 .prm-primary-bg, prm-spinner.overlay-cover.light-on-dark:after, prm-search-bar, prm-journals-search-bar, prm-browse-search-bar, prm-tags-search-bar {
   color: #00386b;
-  border-top:4px solid #E0AA0F; 
+  border-top:4px solid #E0AA0F;
   border-bottom: 4px solid #00386b;
   background-color: 	#adafaa;
     -webkit-box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4);
@@ -436,7 +436,25 @@ prm-brief-result .item-title span {
     md-toolbar.md-primoExplore-theme.citations-toolbar .toolbar-section,
     md-toolbar:not(.md-menu-toolbar).citations-toolbar .toolbar-section {
       border-color: #d7d7d7; }
-
+/* md-card custom for home page */
+md-card-title-text span.md-headline{
+    font-weight: bold;
+}
+md-card.default-card{
+    border-radius: 6px;
+    background: white;
+    border: 1px solid darkgrey;
+}
+md-card.default-card md-card-title, md-card.default-card md-card-title:not(#featuredResultTitle), prm-featured-result-item md-card md-card-title:not(#featuredResultTitle) {
+  background: #E0AA0F;
+      margin: 0 0 20px 0;
+      padding: 10px 20px;
+      border-radius: 4px 4px 0 0;
+      color: whitesmoke !important;
+      -webkit-box-shadow: inset 0 1px 5px rgba(0,0,0,.2);
+      box-shadow: inset 0 1px 5px rgba(0,0,0,.2);
+      text-shadow: 1px 1px 1px #956E00, 1px 1px 4px #956E00, 1px -1px 0 #956E00, -1px 1px 0 #956E00, 1px 1px 0 #956E00;
+}
 .prm-links, .md-button.arrow-link-button [link-arrow], a, .md-button.arrow-link-button .button-content, [class*="NFT"] > span,
 [class*="check_"] > span,
 [class*="_more"] > span,

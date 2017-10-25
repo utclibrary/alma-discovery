@@ -25,16 +25,21 @@
         <md-card class="default-card">
             <md-card-title>
                 <md-card-title-text>
-                    <span class="md-headline">Questions? Comments?</span>
+                    <span class="md-headline">Need Help?</span>
                 </md-card-title-text>
             </md-card-title>
             <md-card-content>
-                <a href="#" class="arrow-link">
-                    Let us know what you think!
-                    <prm-icon link-arrow>
-                        <md-icon md-svg-icon="./images/chevron-right.svg"></md-icon>
-                    </prm-icon>
-                </a>
+              <!-- Place this div in your web page where you want your chat widget to appear. -->
+              <div class="needs-js iframe normal">JavaScript is loading.</div>
+
+              <!-- Place this script as near to the end of your BODY as possible. -->
+              <script type="text/javascript">
+                (function() {
+                  var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
+                  x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "us.libraryh3lp.com/js/libraryh3lp.js?4949";
+                  var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
+                })();
+              </script>
             </md-card-content>
         </md-card>
     </div>
@@ -42,12 +47,31 @@
         <md-card class="default-card">
             <md-card-title>
                 <md-card-title-text>
-                    <span class="md-headline">Where can I get help?</span>
+                    <span class="md-headline">Need More Help?</span>
                 </md-card-title-text>
             </md-card-title>
             <md-card-content>
-                <p>
-                    <a href="https://utc.edu/library/help/">Ask a librarian</a> how to start your search
+              <p>
+              <h3>Call</h3>
+
+                    <p>(423) 425-4510</p>
+
+                    <h3>Text</h3>
+
+                    <p>(423) 521-0564</p>
+
+                    <h3>Email</h3>
+
+                    <p><a href="mailto:library@utc.edu">library@utc.edu</a></p>
+
+                    <h3>Stop By</h3>
+
+                    <p>Second floor Information Desk</p>
+
+                    <p><a class="btn btn-success btn-block" href="/library/services/students/research-appointments.php">Schedule An Appointment</a></p>
+
+                    <div><a class="btn btn-block btn-inverse" href="/library/services/instruction/book-a-library-class.php">Schedule A Library Class</a></div>
+
                 </p>
 
             </md-card-content>

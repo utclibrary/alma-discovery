@@ -1,5 +1,7 @@
 
-
+/* responsive */
+.flex-60, .layout-row>.flex-60 {max-width: 100%}
+.flex-40, .layout-row>.flex-40 {max-width: 100%}
 
 /*Break out Top Level Facets*/
 prm-facet-exact [title="Availability"],[aria-label="Availability expand"] {display:none;}

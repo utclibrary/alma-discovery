@@ -31,9 +31,6 @@
     controller: 'prmLogoAfterController',
     template: '<div class="product-logo product-logo-local" layout="row" layout-align="start center" layout-fill id="banner"><a href="https://www.utc.edu/library/"><img class="logo-image" alt="{{::(\'nui.header.LogoAlt\' | translate)}}" ng-src="{{$ctrl.getIconLink()}}"/></a></div>'
   });
-
-
-
 })();
 
 //chat box
@@ -42,3 +39,12 @@
   x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "us.libraryh3lp.com/js/libraryh3lp.js?4949";
   var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
 })();
+// check url to set active state on top menu items
+var url = window.location.href;
+console.log(url);
+if (url.indexOf("CourseReserves") >= 0) {
+  console.log("on Course Reserves tab");
+}
+else{
+  console.log("on tab other than Course Reserves");
+}

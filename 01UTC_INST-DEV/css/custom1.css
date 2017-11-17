@@ -1,3 +1,24 @@
+/* database suggesting */
+prm-resource-recommender md-card {
+  background-color: white;
+  border-top: 2px solid lightcyan;
+  border-bottom: 2px solid darkgrey;
+  border-left: 2px solid lightcyan;
+  border-right: 2px solid darkgray;
+}
+/* truncate paren numbers in facets */
+.text-rtl {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+/* to from on pub date */
+md-input-container.md-input-has-value label:not(.md-no-float) {
+    opacity: 1;
+  }
+  md-input-container label, md-input-container label:not(.md-no-float):not(._md-container-ignore) {
+    color: black;
+  }
 /* Advanced search button */
 button.switch-to-advanced , button.switch-to-simple {
   background-color: #00386b;

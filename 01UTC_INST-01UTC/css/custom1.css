@@ -1,11 +1,7 @@
-/* hide additional need help links in login box */
-prm-login-help md-content.layout-column{
-  display:none;
+/* alert box */
+.alert-bar{
+  background-color: rgba(224, 170, 15, .5);
 }
-/* reorder login order */
-prm-login #tab-content-2   { display: table; }
-md-list-item.md-2-line  { display: table-footer-group; }
-md-list-item.md-1-line { display: table-header-group; }
 /* style stand alone login page */
 prm-login .animate-enter-leave-scale-bounce{
   position: inherit !important;

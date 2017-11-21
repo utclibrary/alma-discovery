@@ -1,3 +1,25 @@
+/* hide additional need help links in login box */
+prm-login-help md-content.layout-column{
+  display:none;
+}
+/* reorder login order */
+prm-login #tab-content-2   { display: table; }
+md-list-item.md-2-line  { display: table-footer-group; }
+md-list-item.md-1-line { display: table-header-group; }
+/* style stand alone login page */
+prm-login .animate-enter-leave-scale-bounce{
+  position: inherit !important;
+}
+prm-stand-alone-login .login-header{
+  background-color: #00305c;
+  border-radius: 10px;
+}
+prm-stand-alone-login h2.md-headline span::before{
+  content: "Library Account ";
+}
+prm-stand-alone-login .md-button:hover:not([disabled]){
+  background-color: rgba(0, 27, 100, .25);
+}
 /* facets display */
 /* wrap overflow text in facets */
 prm-facet-exact .section-content .md-chips .md-chip .md-chip-content {
@@ -92,9 +114,6 @@ display: flex;
 }
 prm-logo .logo-image, prm-logo img {
     max-height: 75px;
-}
-img.logo-image:after {
-    content: "UTC Library";
 }
 prm-brief-result .item-title span {
     /*color: #44707b;*/

@@ -1,3 +1,10 @@
+/* search bar elipses on smaller screens */
+#searchBar::placeholder{
+    text-overflow:ellipsis;
+}
+#searchBar{
+  margin-right: 100px;
+}
 /* fix quick search dropdown on search bar on small screens */
 @media (max-width: 959px) and (min-width: 600px){
 .flex-sm-40, .layout-row>.flex-sm-40, .layout-sm-row>.flex-sm-40 {

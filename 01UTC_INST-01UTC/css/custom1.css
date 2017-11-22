@@ -1,8 +1,22 @@
-/* alert box */
-.alert-bar{
-  background-color: rgba(224, 170, 15, .5);
+/* fix quick search dropdown on search bar on small screens */
+@media (max-width: 959px) and (min-width: 600px){
+.flex-sm-40, .layout-row>.flex-sm-40, .layout-sm-row>.flex-sm-40 {
+    -ms-flex: inherit;
+    flex: inherit;
+  }
 }
-/* style stand alone login page */
+/* highlight Active Filters */
+.filtered-facets-section {
+    border-radius: 10px;
+    z-index: 1;
+    background-color: rgba(173, 175, 170, .5);
+    border: 1px solid grey;
+    padding: .5em;
+}
+.filtered-facets-section h2{
+  font-weight: bold;
+}
+/* style stand alone login page - back button was in middle of h2*/
 prm-login .animate-enter-leave-scale-bounce{
   position: inherit !important;
 }
@@ -26,6 +40,7 @@ prm-facet-exact .section-content .md-chips .md-chip .md-chip-content {
 prm-facet-exact .md-chips .md-chip {
   line-height: normal;
   height: auto;
+  border-top: 1px solid lightgrey;
 }
 prm-facet-exact .md-chips .md-chip .md-chip-content strong {
   white-space: normal;
@@ -44,7 +59,6 @@ prm-facet-exact .section-content .md-chips .md-chip strong+span {
 prm-facet .sidebar-inner-wrapper {
   margin-right: 0;
 }
-
 /* database suggesting */
 prm-resource-recommender md-card {
   background-color: white;
@@ -86,10 +100,22 @@ prm-topbar .active{
 .flex-40, .layout-row>.flex-40 {max-width: 100%}
 
 /*Break out Top Level Facets*/
-prm-facet-exact [title="Availability"],[aria-label="Availability expand"] {display:none;}
-div [aria-label="Include Held by library"], [title="Held by library"], [aria-label="Exclude Held by library"] {display:none;}
-
-[title="Available online"],[title="Peer-reviewed Journals"],[title="Held by library"]{
+.available-facets:first-of-type{
+  background-color: white;
+}
+#facets .available-facets:first-of-type{
+  background-color: pink;
+}
+prm-facet-exact [title="Availability"],[aria-label="Availability expand"] {
+  display:none;
+}
+prm-facet-exact [aria-label="From"]{
+  min-width: 100px;
+}
+div [aria-label="Include Held by library"], [title="Held by library"], [aria-label="Exclude Held by library"] {
+  display:none;
+}
+[title="Available online"],[title="Peer-reviewed"],[title="Held by library"]{
     text-transform: none;
     font-weight: 600;
     font-size: 18px;
@@ -284,7 +310,12 @@ prm-brief-result .item-title span {
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
     letter-spacing: 0;
-    color: #58799A; }
+    color: #00386b;
+  }
+  prm-alert-bar prm-authentication .md-button{
+    border: 2px solid #00386b;
+    background-color: whitesmoke;
+  }
     .md-button.button-as-link:hover:not([disabled]), .bar prm-authentication .md-button:hover:not([disabled]), .md-button.button-as-link:focus:not([disabled]), .bar prm-authentication .md-button:focus:not([disabled]), .md-button.button-as-link.hovered:not([disabled]), .bar prm-authentication .md-button.hovered:not([disabled]), .md-button.button-as-link.md-focused:not([disabled]), .bar prm-authentication .md-button.md-focused:not([disabled]), .md-button.button-as-link._md-focused:not([disabled]), .bar prm-authentication .md-button._md-focused:not([disabled]) {
       color: #284664;
       background-color: rgba(88, 121, 154, 0.1); }
@@ -690,7 +721,7 @@ md-toolbar.default-toolbar:not(.md-menu-toolbar) {
 .prm-alert, .bar.alert-bar, .classic-input .search-scope {
   color: black; }
   .prm-alert-bg, .bar.alert-bar, .classic-input .search-scope {
-    background-color: #e0aa0f; }
+    background-color:  rgba(224, 170, 15, .5); }
   .prm-alert-border, .bar.alert-bar, .classic-input .search-scope {
     border-color: #ede49e; }
 

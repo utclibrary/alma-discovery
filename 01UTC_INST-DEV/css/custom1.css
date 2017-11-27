@@ -1,3 +1,10 @@
+/* show more button style */
+#mainResults button.button-confirm:last-of-type{
+  color:black;
+  border: 1px solid black;
+  min-width: 75%;
+  box-shadow: 3px 3px 10px #888888;
+}
 /*Hide Interface Language */
 prm-change-lang .layout-align-center-center, prm-change-lang div {display:none;}
 

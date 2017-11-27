@@ -1,9 +1,38 @@
+/*Hide Interface Language */
+prm-change-lang .layout-align-center-center, prm-change-lang div {display:none;}
+
+/* button style on advanced search */
+.advanced-search-output > .layout-row > md-card button{
+  border: 2px solid #00386b;
+  background-color: rgba(0,56,107.25);
+}
+/* hover on logo */
+prm-logo-after a:hover{
+  -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+  background-color: transparent;
+}
 /* search bar elipses on smaller screens */
-#searchBar::placeholder{
+#searchBar::placeholder {
     text-overflow:ellipsis;
+}
+#searchBar:-ms-input-placeholder {
+  text-overflow:ellipsis;
+}
+#searchBar::-moz-placeholder {
+  text-overflow:ellipsis;
 }
 #searchBar{
   margin-right: 100px;
+}
+/* fix logo on header overlapping menu */
+@media (max-width: 959px) and (min-width: 600px), (max-width: 450px){
+  prm-logo .logo-image, prm-logo img {
+    margin-top: -35px;
+    clip: rect(0px,54px,55px,0px);
+    position: absolute;
+}
 }
 /* fix quick search dropdown on search bar on small screens */
 @media (max-width: 959px) and (min-width: 600px){

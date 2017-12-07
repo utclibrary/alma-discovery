@@ -1,3 +1,15 @@
+/*Move Expand results to bottom of page */
+prm-facet div div div.sidebar-section.margin-top-small.margin-bottom-medium.compensate-padding-left:nth-child(2) {
+order:100;
+}
+/* hide descriptions on hamburger lightbox */
+prm-main-menu[menu-type="full"] md-card-title md-card-title-text:only-child .md-subhead {
+  display: none;
+}
+/* advanced search alignment of first dropdow */
+#select_26 > md-select-value:nth-child(1) {
+    margin-left: 70px;
+}
 /* show more button style */
 #mainResults button.button-confirm:last-of-type{
   color:black;

@@ -1,3 +1,29 @@
+
+/* homepage box styling */
+md-card.default-card md-card-title.homepage,
+md-card.default-card md-card-title.homepage:not(#featuredResultTitle),
+prm-featured-result-item md-card md-card-title.homepage:not(#featuredResultTitle){
+  margin-bottom:0;
+}
+/* signin text to fix contrast issues */
+  prm-user-area .user-menu-button .user-name {
+      color: white;
+  }
+  prm-user-area .user-menu-button .user-name:hover {
+      color: #adafaa;
+  }
+/*Move Expand results to bottom of page */
+prm-facet div div div.sidebar-section.margin-top-small.margin-bottom-medium.compensate-padding-left:nth-child(2) {
+order:100;
+}
+/* hide descriptions on hamburger lightbox */
+prm-main-menu[menu-type="full"] md-card-title md-card-title-text:only-child .md-subhead {
+  display: none;
+}
+/* advanced search alignment of first dropdow */
+#select_26 > md-select-value:nth-child(1) {
+    margin-left: 70px;
+}
 /* show more button style */
 #mainResults button.button-confirm:last-of-type{
   color:black;
@@ -158,7 +184,12 @@ prm-facet-exact [aria-label="From"]{
 div [aria-label="Include Held by library"], [title="Held by library"], [aria-label="Exclude Held by library"] {
   display:none;
 }
-[title="Available online"],[title="Peer-reviewed"],[title="Held by library"]{
+prm-location-items h3.section-title span:nth-child(1){
+  line-height: 3em;
+  border-top: 1px solid #00386b;
+  border-bottom: 1px solid #00386b;
+}
+[title="Available Online"],[title="Peer Reviewed"],[title="Held by library"]{
     text-transform: none;
     font-weight: 600;
     font-size: 18px;
@@ -185,13 +216,16 @@ prm-brief-result .item-title span {
 	color: 	#00386b;
 }
 /* primary color hook */
-/* commenttttt*/
+prm-action-list .nav-control{
+  background-color: #e0aa0f;
+  min-height:100%;
+}
 .md-button {
   color: #3a3a3a; }
   .md-button:hover:not([disabled]), .md-button:focus:not([disabled]), .md-button.hovered:not([disabled]), .md-button.md-focused:not([disabled]), .md-button._md-focused:not([disabled]) {
     color: #080606;
-    /*background-color: rgba(58, 58, 58, 0.1); */
-	background-color: #e0aa0f;
+  background-color: rgba(58, 58, 58, 0.1);
+	/*background-color: #e0aa0f;*/
 	}
   .light-on-dark-dialog .md-button {
     color: white; }
@@ -337,6 +371,8 @@ prm-brief-result .item-title span {
   .md-button.outline-button {
     border: 1px solid; }
   .md-button.md-raised:not([disabled]) {
+    color:black;
+    border:1px solid black;
     box-shadow: 0 2px 8px -4px rgba(0, 0, 0, 0.26); }
   .md-button[disabled="disabled"] {
     color: #ccc !important;
@@ -435,7 +471,7 @@ prm-brief-result .item-title span {
 .request-form md-input-container .md-input-container-dummy > .md-select-dummy ._md-select-value._md-select-placeholder, .result-item-actions .md-icon-button, .result-item-actions .more-options-button, prm-add-query-to-saved-searches .custom-button, .md-autocomplete-suggestions .suggestion-scope, md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item.md-active:not([disabled]), md-tabs md-tabs-wrapper md-tabs-canvas md-pagination-wrapper md-tab-item.md-focused:not([disabled]), md-tab-content .tab-content-header md-input-container md-select-value .md-text {
   color: #00386B; }
 
-.prm-primary-bg, prm-spinner.overlay-cover.light-on-dark:after, prm-search-bar, prm-journals-search-bar, prm-browse-search-bar, prm-tags-search-bar {
+.prm-primary-bg, prm-spinner.overlay-cover.light-on-dark:after, prm-search-bar, prm-atoz-search-bar, prm-browse-search-bar, prm-tags-search-bar {
   color: #00386b;
   border-top:4px solid #E0AA0F;
   border-bottom: 4px solid #00386b;
@@ -655,9 +691,9 @@ md-tabs.tabs-as-links md-tab-item:not([disabled]), md-tabs.tabs-as-app .back-but
 .tiles-grid-tile .tile-header .header-link:hover,
 .tiles-grid-tile .tile-header .header-link:focus, md-grid-tile .tile-header .md-button,
 .tiles-grid-tile .tile-header .md-button, md-input-container.has-fixed-message [ng-message] a, .separate-list-items md-list-item .item-loader-with-text .md-button, md-list-item.list-item-as-link {
-  color: #58799A; }
+  color: #2F4F4F; }
   .prm-links-important, .text-link {
-    color: #58799A !important; }
+    color: #2F4F4F !important; }
   .prm-links.prm-links-hover, .md-button.arrow-link-button .prm-links-hover[link-arrow], a.prm-links-hover, .md-button.arrow-link-button .prm-links-hover.button-content, [class*="NFT"] > span.prm-links-hover,
   [class*="check_"] > span.prm-links-hover,
   [class*="_more"] > span.prm-links-hover,
@@ -753,9 +789,9 @@ md-toolbar.transparent-toolbar:not(.md-menu-toolbar), md-toolbar.default-toolbar
 md-toolbar.md-primoExplore-theme.default-toolbar,
 md-toolbar.default-toolbar:not(.md-menu-toolbar) {
   color: #3a3a3a; }
-  .prm-text.prm-hue1, body.prm-hue1, .weak-text, .numbered-list .item:before, prm-brief-result-container .media-content-type, prm-snippet prm-icon, a.prm-hue1.a-tag-as-wrapper, .md-button.arrow-link-button .prm-hue1.a-tag-as-wrapper.button-content, .recommendations-title:hover > span > span.prm-hue1.a-tag-as-wrapper, .recommendations-title.hover > span > span.prm-hue1.a-tag-as-wrapper, prm-tags-list .md-chips .md-chip .md-chip-content:hover strong.prm-hue1.a-tag-as-wrapper, prm-tags-list .md-chips md-chip .md-chip-content:hover strong.prm-hue1.a-tag-as-wrapper, prm-tags-list md-chips .md-chip .md-chip-content:hover strong.prm-hue1.a-tag-as-wrapper, prm-tags-list md-chips md-chip .md-chip-content:hover strong.prm-hue1.a-tag-as-wrapper, .hack-a-tag-unclickable a.prm-hue1, .hack-a-tag-unclickable .md-button.arrow-link-button .prm-hue1.button-content, .md-button.arrow-link-button .hack-a-tag-unclickable .prm-hue1.button-content, prm-search-bar.prm-hue1, prm-journals-search-bar.prm-hue1, prm-browse-search-bar.prm-hue1, prm-tags-search-bar.prm-hue1, prm-virtual-browse-item md-card md-card-title.prm-hue1, prm-virtual-browse-item md-card md-card-content.prm-hue1, md-input-container.static-select.md-input-has-value label.prm-hue1, .presentable-disabled-inputs md-input-container label.prm-hue1, md-toolbar.prm-hue1.transparent-toolbar, md-toolbar.prm-hue1.default-toolbar {
-    color: #878787; }
 
+  .prm-text.prm-hue1, body.prm-hue1, .weak-text, .numbered-list .item:before, prm-brief-result-container .media-content-type, prm-snippet prm-icon, a.prm-hue1.a-tag-as-wrapper, .md-button.arrow-link-button .prm-hue1.a-tag-as-wrapper.button-content, .recommendations-title:hover > span > span.prm-hue1.a-tag-as-wrapper, .recommendations-title.hover > span > span.prm-hue1.a-tag-as-wrapper, prm-tags-list .md-chips .md-chip .md-chip-content:hover strong.prm-hue1.a-tag-as-wrapper, prm-tags-list .md-chips md-chip .md-chip-content:hover strong.prm-hue1.a-tag-as-wrapper, prm-tags-list md-chips .md-chip .md-chip-content:hover strong.prm-hue1.a-tag-as-wrapper, prm-tags-list md-chips md-chip .md-chip-content:hover strong.prm-hue1.a-tag-as-wrapper, .hack-a-tag-unclickable a.prm-hue1, .hack-a-tag-unclickable .md-button.arrow-link-button .prm-hue1.button-content, .md-button.arrow-link-button .hack-a-tag-unclickable .prm-hue1.button-content, prm-search-bar.prm-hue1, prm-journals-search-bar.prm-hue1, prm-browse-search-bar.prm-hue1, prm-tags-search-bar.prm-hue1, prm-virtual-browse-item md-card md-card-title.prm-hue1, prm-virtual-browse-item md-card md-card-content.prm-hue1, md-input-container.static-select.md-input-has-value label.prm-hue1, .presentable-disabled-inputs md-input-container label.prm-hue1, md-toolbar.prm-hue1.transparent-toolbar, md-toolbar.prm-hue1.default-toolbar {
+    color: #00386b; }
 .prm-warn, md-input-container.md-required:before, md-input-container.md-input-invalid:before, .required-starlet, prm-breadcrumbs .md-chip-remove-container button:hover md-icon, prm-breadcrumbs .md-chip-remove-container button:focus md-icon, prm-tags-list .md-chips.md-removable .md-chip .md-chip-remove md-icon, prm-tags-list .md-chips.md-removable md-chip .md-chip-remove md-icon, prm-tags-list md-chips.md-removable .md-chip .md-chip-remove md-icon, prm-tags-list md-chips.md-removable md-chip .md-chip-remove md-icon, md-input-container.md-input-invalid, .md-chips .md-chip.toggleable-chip .md-chip-remove-container prm-icon.close-button {
   color: tomato; }
   .prm-warn-bg, md-input-container.md-input-invalid:after, prm-tags-list .md-chips .md-input-invalid.md-chip-input-container:after, prm-tags-list .md-chips .md-input-invalid._md-chip-input-container:after, prm-tags-list md-chips .md-input-invalid.md-chip-input-container:after, prm-tags-list md-chips .md-input-invalid._md-chip-input-container:after {
@@ -763,13 +799,16 @@ md-toolbar.default-toolbar:not(.md-menu-toolbar) {
 
 .prm-alert, .bar.alert-bar, .classic-input .search-scope {
   color: black; }
+  /*
   .prm-alert-bg, .bar.alert-bar, .classic-input .search-scope {
     background-color:  rgba(224, 170, 15, .5); }
+
   .prm-alert-border, .bar.alert-bar, .classic-input .search-scope {
     border-color: #ede49e; }
 
 .prm-highlight {
   background-color: #FFFCC4; }
+  */
   .prm-highlight.prm-hue1, .list-item-wrapper .item-bookmarked,
   .list-item-wrapper .item-bookmarked:hover {
     background-color: #FFFCC4; }
@@ -781,7 +820,7 @@ md-toolbar.default-toolbar:not(.md-menu-toolbar) {
 [class*="may_"],
 [class*="does_not_exist"],
 .getit, prm-search-result-frbr-line a > prm-icon:first-child, prm-search-result-frbr-line .md-button.arrow-link-button .button-content > prm-icon:first-child, .md-button.arrow-link-button prm-search-result-frbr-line .button-content > prm-icon:first-child {
-  color: #E0AA0F; }
+  color: #00386b; }
 
 .prm-positive, .status-available, [class*="available"],
 [class*="FT"],
@@ -794,7 +833,7 @@ md-toolbar.default-toolbar:not(.md-menu-toolbar) {
 [class*="no_"],
 .restricted,
 .duedate {
-  color: gray; }
+  color: black; }
 
 .prm-citation-color, prm-citation-trails-item .item-type {
   color: tomato; }

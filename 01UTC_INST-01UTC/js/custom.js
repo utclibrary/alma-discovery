@@ -63,8 +63,6 @@ script.text = "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Da
 document.head.appendChild(script);
 /* detect current tab */
 setInterval(function() {
-  //fix issue with browse search text
-  jQuery("[aria-label='BrowseSearch']").text("Browse Search");
   //array to detect current tab
   var searchTabsList = {
     "jsearch?": "Journal Search",

@@ -155,6 +155,13 @@ md-input-container.md-input-has-value label:not(.md-no-float) {
     color: black;
   }
 /* Advanced search button */
+button.switch-to-advanced, button.switch-to-simple {
+  bottom:0;
+}
+button.switch-to-advanced span{
+  color:#000000;
+}
+/*
 button.switch-to-advanced , button.switch-to-simple {
   background-color: #00386b;
 }
@@ -168,6 +175,7 @@ button.switch-to-advanced:hover, button.switch-to-simple:hover{
   box-shadow: inset 0 1px 5px rgba(0,0,0,.2);
   text-shadow: 1px 1px 1px #956E00, 1px 1px 4px #956E00, 1px -1px 0 #956E00, -1px 1px 0 #956E00, 1px 1px 0 #956E00;
 }
+*/
 /* show tab selected on top menu */
 /*prm-topbar .md-button:focus:not([disabled]), .md-button.button-over-dark:focus:not([disabled]),*/
 #mainMenu .active{
@@ -878,3 +886,21 @@ md-list.prm-list.prm-linkable-list-items md-list-item > .md-button > .button-con
   background-color: white; }
 
 /* primary color hook end*/
+/* View online enhancements */
+prm-alma-viewit-items:before{
+  content: "Access this item through database(s) below.";
+}
+prm-alma-viewit-items md-list md-list-item .in-element-dialog-context{
+  background: #00386B;
+  color:#adafaa;
+}
+prm-alma-viewit-items md-list md-list-item .in-element-dialog-context:hover{
+  background: #e0aa0f;
+  color:black;
+}
+prm-alma-viewit-items md-list md-list-item .in-element-dialog-context a{
+  color: white;
+}
+prm-alma-viewit-items md-list md-list-item .in-element-dialog-context:hover a{
+  color: #00386b;
+}

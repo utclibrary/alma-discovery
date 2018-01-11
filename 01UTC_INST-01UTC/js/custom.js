@@ -68,7 +68,7 @@ setInterval(function() {
     "jsearch?": "Journal Search",
     "CustomCourseReserves": "Course Reserves",
     "citationlinker": "Citation Lookup",
-    "browse": "BrowseSearch",
+    "browse": "Browse Search",
     "dbsearch?": "Database Search"
   };
   //cycle through array and set active tab

@@ -80,4 +80,6 @@ setInterval(function() {
         break;
     }
   });
+  /* align advanced search select fields */
+  jQuery("#advanced-search md-select-value").first().addClass( "advanced-first-field" );
 }, 50);

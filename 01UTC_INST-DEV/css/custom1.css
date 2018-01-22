@@ -867,7 +867,7 @@ md-list.prm-list.prm-linkable-list-items md-list-item > .md-button > .button-con
 
 /* primary color hook end*/
 /* View online enhancements*/
-prm-alma-viewit-items.many:before{
+prm-alma-viewit-items.many:first-of-type:before{
   content: "Access this item through one of the databases below.";
 }
 prm-alma-viewit-items.one:before{

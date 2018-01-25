@@ -1,3 +1,12 @@
+/*CSS for Location Filter -- display of multivolume series/serials in the detailed records */
+[ng-model="$ctrl.locationFilter"]{display:none;}
+
+[ng-model="$ctrl.descriptionFilter"] md-select-value span {display:none;0}
+[ng-model="$ctrl.descriptionFilter"]::after {
+content: "Browse by Volume";
+padding:6px;
+font-weight:bold;
+}
 /* would help make the multivolume print holdings navigation less confusing */
 [ng-model="$ctrl.volumeFilter"]{display:none;}
 [ng-model="$ctrl.yearFilter"]{display:none;}

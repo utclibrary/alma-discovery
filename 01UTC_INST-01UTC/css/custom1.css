@@ -1,3 +1,7 @@
+/* hide View Online on full view to correct issue with not linking properly*/
+prm-full-view button[title="View Online"], prm-full-view prm-search-result-availability-line [aria-label="icon-link"] {
+  display:none;
+}
 /*CSS for Location Filter -- display of multivolume series/serials in the detailed records */
 [ng-model="$ctrl.locationFilter"]{display:none;}
 
@@ -7,7 +11,7 @@ content: "Browse by Volume";
 padding:6px;
 font-weight:bold;
 }
-/* would help make the multivolume print holdings navigation less confusing */
+/* help make the multivolume print holdings navigation less confusing */
 [ng-model="$ctrl.volumeFilter"]{display:none;}
 [ng-model="$ctrl.yearFilter"]{display:none;}
 /* style advanced search icon */

@@ -1,3 +1,16 @@
+/* hide View Online on full view to correct issue with not linking properly*/
+prm-full-view button[title="View Online"], prm-full-view prm-search-result-availability-line [aria-label="icon-link"] {
+  display:none;
+}
+/*CSS for Location Filter -- display of multivolume series/serials in the detailed records */
+[ng-model="$ctrl.locationFilter"]{display:none;}
+
+[ng-model="$ctrl.descriptionFilter"] md-select-value span {display:none;0}
+[ng-model="$ctrl.descriptionFilter"]::after {
+content: "Browse by Volume";
+padding:6px;
+font-weight:bold;
+}
 /* style advanced search icon */
 #advanced-search-icon,#basic-search-icon{
   color:grey;
@@ -897,14 +910,17 @@ prm-alma-viewit-items md-list md-list-item .in-element-dialog-context:hover a{
 button.switch-to-advanced, button.switch-to-simple {
   bottom:-5px;
 }
+button.switch-to-advanced md-icon, button.switch-to-simple md-icon {
+  margin-right:.25em;
+}
 .switch-to-advanced:hover:not([disabled]){
   background-color: transparent;
 }
-.switch-to-advanced:hover:not([disabled]) span{
+.switch-to-advanced:hover:not([disabled]) span, .switch-to-simple:hover:not([disabled]) span{
   color: #00386b;
   text-decoration: underline;
 }
-.switch-to-advanced:hover:not([disabled]) #advanced-search-icon{
+.switch-to-advanced:hover:not([disabled]) #advanced-search-icon, .switch-to-simple:hover:not([disabled]) #basic-search-icon{
   color: #ffffff;
 }
 button.switch-to-advanced span{

@@ -1,3 +1,27 @@
+/* DEV alert box styling */
+#div-environment{
+  text-align: center;
+  background-color: #f6dcdc;
+  border-color: #f3d0d5;
+  color: #802020;
+  padding:5px;
+}
+/* tweak highlighted section on full view */
+.section-focused .section-title{
+  font-weight: bold;
+}
+.full-view-section-content:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5.5em;
+    height: 100%;
+    width: 10px;
+    background: transparent;
+    box-shadow: inset 4px 0 0 0 #e0aa0f, inset 0 4px 0 0 #e0aa0f, inset 0 -4px 0 0 #e0aa0f;
+    opacity: 0;
+    transition: opacity 6s ease;
+}
 /* hide View Online on full view to correct issue with not linking properly*/
 prm-full-view button[title="View Online"], prm-full-view prm-search-result-availability-line [aria-label="icon-link"] {
   display:none;
@@ -941,3 +965,50 @@ button.switch-to-advanced:hover, button.switch-to-simple:hover{
   text-shadow: 1px 1px 1px #956E00, 1px 1px 4px #956E00, 1px -1px 0 #956E00, -1px 1px 0 #956E00, 1px 1px 0 #956E00;
 }
 */
+/* GET Help button styling */
+#libraryh3lp:hover {
+	background-color:#E0AA0F;
+}
+#libraryh3lp:hover a{
+		padding-bottom:10px;
+		}
+#libraryh3lp:hover md-icon#help-bubble{
+	color:#781e1e;
+		}
+#libraryh3lp a{
+	text-decoration: none;
+	color: white;
+	}
+#libraryh3lp md-icon#help-bubble{
+	color:#E0AA0F;
+	}
+#libraryh3lp {
+    border: 1px solid whitesmoke;
+		 right: 0;
+   -webkit-transform-origin: 100% 50%;
+      -moz-transform-origin: 100% 50%;
+       -ms-transform-origin: 100% 50%;
+        -o-transform-origin: 100% 50%;
+           transform-origin: 100% 50%;
+   -webkit-transform: rotate(270deg) translate(50%, 50%);
+      -moz-transform: rotate(270deg) translate(50%, 50%);
+       -ms-transform: rotate(270deg) translate(50%, 50%);
+        -o-transform: rotate(270deg) translate(50%, 50%);
+           transform: rotate(270deg) translate(50%, 50%);
+	box-shadow: 0 2px 4px rgba(0,0,0,.4), 0 4px 8px rgba(0,0,0,.15);
+    background: #781e1e;
+    border-radius: .5em .5em 0 0 ;
+    -moz-border-radius: .5em .5em 0 0 ;
+    -webkit-border-radius: .5em .5em 0 0 ;
+    bottom: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 150%;
+    padding: 5px 20px 5px 20px;
+    position: fixed;
+    text-align: center;
+    z-index: 1000;
+    right: 40px;
+}
+/* END Get help button */

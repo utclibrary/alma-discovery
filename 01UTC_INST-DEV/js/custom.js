@@ -60,7 +60,10 @@ setInterval(function() {
 }
 /* add dev alert bar to top of page on 01UTC_INST:DEV */
 if ((window.location.href.indexOf("01UTC_INST:DEV") > -1 )&&(jQuery("#div-environment").length == 0)){
-  jQuery('body').prepend("<div id='div-environment'> | <strong>DEV</strong> environment | </div>")
+  jQuery('body').prepend("<div id='div-environment' class='alert-danger'> | <strong>DEV</strong> environment | </div>")
+}
+if ((window.location.href.indexOf("sandbox01-na.primo.exlibrisgroup.com") > -1 )&&(jQuery("#div-environment").length == 0)){
+  jQuery('body').prepend("<div id='div-environment' class='alert-info'> | <strong>SANDBOX</strong> environment | </div>")
 }
 /* detect and highlight current tab */
   //fix issue with browse search text
@@ -84,10 +87,10 @@ if ((window.location.href.indexOf("01UTC_INST:DEV") > -1 )&&(jQuery("#div-enviro
   });
 /* insert icon before advanced|basic search */
   if(jQuery("#advanced-search-icon").length == 0){
-  jQuery("<md-icon id='advanced-search-icon'><svg width='100%' height='100%' viewBox='-2 -4 24 24' y='72' xmlns='http://www.w3.org/2000/svg' fit='' preserveAspectRatio='xMidYMid meet' focusable='false'><polyline points='0 10 8.63 10 8.63 8 0 8'></polyline><polyline points='0 16 8.63 16 8.63 14 0 14'></polyline><polyline points='0 4 8.63 4 8.63 2 0 2'></polyline><path d='M17.17,18.17L14,15l-1.41,1.41L17.17,21l4.59-4.59L20.34,15M17.17,5.83L20.34,9l1.41-1.41L17.17,3,12.58,7.59,14,9Z' transform='translate(-2.24 -3)'></path></svg></md-icon>").insertBefore(".switch-to-advanced .layout-row span");
+  jQuery("<md-icon id='advanced-search-icon' md-svg-icon='primo-ui:close' aria-label='icon-close' class='md-primoExplore-theme' aria-hidden='true'><svg id='close' width='100%' height='100%' viewBox='0 0 24 24' y='240' xmlns='http://www.w3.org/2000/svg' fit='' preserveAspectRatio='xMidYMid meet' focusable='false'><path d='m 11.002979,20.902474 h 1.994042 v -7.905453 h 7.905453 V 11.002979 H 12.997021 V 3.0975256 H 11.002979 V 11.002979 H 3.0975256 v 1.994042 h 7.9054534 z'></path></svg></md-icon>").insertBefore(".switch-to-advanced .layout-row span");
 }
   if(jQuery("#basic-search-icon").length == 0){
-  jQuery("<md-icon id='basic-search-icon'><svg width='100%' height='100%' viewBox='-2 -4 24 24' y='72' xmlns='http://www.w3.org/2000/svg' fit='' preserveAspectRatio='xMidYMid meet' focusable='false'><polyline points='0 10 8.63 10 8.63 8 0 8'></polyline><path d='M21.76,5.41L20.34,4,17.17,7.17,14,4,12.58,5.41,17.17,10m-4.59,8.59L14,20l3.17-3.17L20.34,20l1.41-1.41L17.17,14Z' transform='translate(-2.24 -4)'></path></svg></md-icon></md-icon>").insertBefore(".switch-to-simple .layout-row span");
+  jQuery("<md-icon id='basic-search-icon'><svg id='advancedSearch' width='100%' height='100%' viewBox='0 0 24 24' y='240' xmlns='http://www.w3.org/2000/svg' fit='' preserveAspectRatio='xMidYMid meet' focusable='false'><path d='M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z'></path></svg></md-icon>").insertBefore(".switch-to-simple .layout-row span");
 }
 /*align advanced search select fields */
 jQuery("#advanced-search md-select-value").first().css( "margin-left", "70px" );

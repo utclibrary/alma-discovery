@@ -1,10 +1,17 @@
-/* DEV alert box styling */
+/* ENVIRONMENT alert box styling */
 #div-environment{
   text-align: center;
+  padding:5px;
+}
+#div-environment.alert-danger{
   background-color: #f6dcdc;
   border-color: #f3d0d5;
   color: #802020;
-  padding:5px;
+}
+#div-environment.alert-info{
+  background-color: #d6dfe8;
+  border-color: #c0d2db;
+  color: #58799A;
 }
 /* tweak highlighted section on full view */
 .section-focused .section-title{
@@ -931,9 +938,11 @@ prm-alma-viewit-items md-list md-list-item .in-element-dialog-context:hover a{
     right:1em;
   }
 }*/
-button.switch-to-advanced, button.switch-to-simple {
-  bottom:-5px;
-}
+/*@media (min-width: 959px){*/
+  button.switch-to-advanced, button.switch-to-simple {
+    top:0px;/*right:1em;*/
+  }
+/*}*/
 button.switch-to-advanced md-icon, button.switch-to-simple md-icon {
   margin-right:.25em;
 }

@@ -34,14 +34,14 @@ prm-full-view button[title="View Online"], prm-full-view prm-search-result-avail
   display:none;
 }
 /*CSS for Location Filter -- display of multivolume series/serials in the detailed records */
-[ng-model="$ctrl.locationFilter"]{display:none;}
 
-[ng-model="$ctrl.descriptionFilter"] md-select-value span {display:none;0}
+[ng-model="$ctrl.locationFilter"],[ng-model="$ctrl.volumeFilter"],[ng-model="$ctrl.yearFilter"],[ng-model="$ctrl.descriptionFilter"] md-select-value span {display:none;}
 [ng-model="$ctrl.descriptionFilter"]::after {
 content: "Browse by Volume";
 padding:6px;
 font-weight:bold;
 }
+
 /* style advanced search icon */
 #advanced-search-icon,#basic-search-icon{
   color:grey;

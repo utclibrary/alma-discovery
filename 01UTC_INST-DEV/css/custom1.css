@@ -1,3 +1,18 @@
+/* checkboxes show by default on facets */
+.multiselect-facet-group.multiselect-inactive
+.md-chip md-checkbox {
+opacity: 1;
+    visibility: visible;
+    z-index: 100;
+    transform: scaleX(1);
+    transition: all 0s 0s;
+}
+
+/* hide location selection from request form item level
+prm-request form .service-form-item:first-child, prm-request form span:first-child{
+  display: none;
+}
+*/
 /* ENVIRONMENT alert box styling */
 #div-environment{
   text-align: center;
@@ -45,10 +60,6 @@ font-weight:bold;
 /* style advanced search icon */
 #advanced-search-icon,#basic-search-icon{
   color:grey;
-}
-/* hide location selection from request form item level */
-prm-request form .service-form-item:first-child, prm-request form span:first-child{
-  display: none;
 }
 /* fix search scope color */
 .search-elements-wrapper .search-scope{

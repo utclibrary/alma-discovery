@@ -31,7 +31,7 @@
     template: '<div class="product-logo product-logo-local" layout="row" layout-align="start center" layout-fill id="banner"><a href="https://www.utc.edu/library/"><img class="logo-image" alt="{{::(\'nui.header.LogoAlt\' | translate)}}" ng-src="{{$ctrl.getIconLink()}}"/></a></div>'
   });
    //scroll down on mobile view advanced search
-  // change advanced search to jump to results 
+  // change advanced search to jump to results
 app.controller('prmAdvancedSearchAfterController', function($scope) {
 // watch to see if advanced search is there
        var advancedSearchObs = new MutationObserver(function(mutations) {
@@ -44,7 +44,7 @@ app.controller('prmAdvancedSearchAfterController', function($scope) {
                                   //need an id to jump to
                                   let submitArea = document.querySelector(".advanced-search-output.layout-row.flex");
                                   submitArea.setAttribute("id", "advancedSearchSubmitArea");
-                                  
+
                                   var submitBtn = document.querySelector("prm-advanced-search .button-confirm.button-large.button-with-icon.md-button.md-primoExplore-theme.md-ink-ripple");
                                   submitBtn.addEventListener("click", function(){
                                          // wait for some results
@@ -60,7 +60,7 @@ app.controller('prmAdvancedSearchAfterController', function($scope) {
                                                        }
                                                 });
                                          });
-                                                
+
                                          advancedSearchObs2.observe(document.getElementsByTagName('prm-explore-main')[0], {
                                                 childList: true
                                                 , subtree: true
@@ -73,7 +73,7 @@ app.controller('prmAdvancedSearchAfterController', function($scope) {
                      }
               })
        })
-       
+
        advancedSearchObs.observe(document.getElementsByTagName('prm-advanced-search')[0], {
               childList: true
               , subtree: true
@@ -125,6 +125,12 @@ if ((window.location.href.indexOf("01UTC_INST:DEV") > -1 )&&(jQuery("#div-enviro
 if ((window.location.href.indexOf("sandbox01-na.primo.exlibrisgroup.com") > -1 )&&(jQuery("#div-environment").length == 0)){
   jQuery('body').prepend("<div id='div-environment' class='alert-info'> | <strong>SANDBOX</strong> environment | </div>")
 }
+/* remove get help on new menu option for 'My Favorites' & 'Search History' */
+if (window.location.href.indexOf("section=") > -1){
+  jQuery("prm-search-result-list-after").hide();
+}else{
+  jQuery("prm-search-result-list-after").show();
+}
 /* detect and highlight current tab */
   //fix issue with browse search text
 //  jQuery("[aria-label='BrowseSearch']").text("Browse Search");
@@ -170,4 +176,4 @@ $( "#searchBar" ).keyup(function() {
   }
 });
 */
-}, 100);
+}, 100);// close setInterval(function()

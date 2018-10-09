@@ -243,7 +243,7 @@ prm-location-items h3.section-title span:nth-child(1){
   border-top: 1px solid #00386b;
   border-bottom: 1px solid #00386b;
 }
-[title="Available Online"],[title="Peer Reviewed"],[title="Held by library"]{
+[title="Available Online"],[title="Peer Reviewed"],[title="Held by library"],[title="Open Access"]{
     text-transform: none;
     font-weight: 600;
     font-size: 18px;
@@ -252,7 +252,6 @@ prm-location-items h3.section-title span:nth-child(1){
     margin-bottom: 0;
     -ms-flex-negative: 0;
     flex-shrink: 0;
-    margin-right: -100px;
     }
 
 /* Call the clickable logo */

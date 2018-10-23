@@ -110,15 +110,11 @@ prm-logo-after a:hover{
   background-color: transparent;
 }
 /* search bar elipses on smaller screens */
-#searchBar::placeholder {
-    text-overflow:ellipsis;
-}
-#searchBar:-ms-input-placeholder {
+#searchBar:placeholder-shown{
+  margin-right:100px;
   text-overflow:ellipsis;
 }
-#searchBar::-moz-placeholder {
-  text-overflow:ellipsis;
-}
+/* removed to fix truncation of text in search box on mobile
 #searchBar{
   margin-right: 100px;
 }

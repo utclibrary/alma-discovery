@@ -1028,3 +1028,9 @@ button.switch-to-advanced:hover, button.switch-to-simple:hover{
     right: 40px;
 }
 /* END Get help button */
+/* hacky fix to center homepage on some screen sizes */
+@media (max-width: 1599px) and (min-width: 1280px){
+  #homepage-content {
+    margin-left: 80px;
+    margin-right: -93px;
+}

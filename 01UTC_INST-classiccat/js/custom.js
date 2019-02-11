@@ -131,17 +131,13 @@ if (window.location.href.indexOf("section=") > -1){
 }else{
   jQuery("prm-search-result-list-after").show();
 }
-/* reload on 'Course Reserves' click */
-jQuery( "[aria-label='Course Reserves']" ).click(function() {
-  location.reload();
-});
+
 /* detect and highlight current tab */
   //fix issue with browse search text
 //  jQuery("[aria-label='BrowseSearch']").text("Browse Search");
   //array to detect current tab
   var searchTabsList = {
     "search?": "Library Search",
-    "CustomCourseReserves": "Course Reserves",
     "browse": "Browse Search"
   };
   //cycle through array and set active tab

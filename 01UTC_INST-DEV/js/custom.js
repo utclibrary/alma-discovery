@@ -109,6 +109,8 @@ script.text = "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Da
 document.head.appendChild(script);
 /* run this block at set intervals */
 setInterval(function() {
+  //hide parent div of facet Include Held by library selection
+  jQuery("[data-facet-value='tlevel-available_p']").hide();
   //chat box only load on pages with chat box
   if (window.location.href.indexOf("/discovery/search?") > -1) {
     var x = document.createElement("script");

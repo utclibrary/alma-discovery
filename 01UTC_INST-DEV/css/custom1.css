@@ -230,7 +230,7 @@ md-input-container.md-input-has-value label:not(.md-no-float) {
 #facets .available-facets:first-of-type{
   background-color: pink;
 }
-prm-facet-exact [title="Availability"],[aria-label="Availability expand"] {
+prm-facet-exact [title="Availability"],[aria-label="Availability expand"],[aria-label="primo-ui:earth"] {
   display:none;
 }
 prm-facet-exact [aria-label="From"]{

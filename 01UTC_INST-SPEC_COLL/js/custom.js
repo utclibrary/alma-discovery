@@ -101,7 +101,7 @@ app.component('prmAdvancedSearchAfter', {
 })();
 /* Load JQuery */
 var js = document.createElement('script');
-js.src = "//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js";
+js.src = "//code.jquery.com/jquery-3.4.0.min.js";
 document.head.appendChild(js);
 /* Add GTM */
 var script = document.createElement('script');

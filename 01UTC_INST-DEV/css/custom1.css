@@ -1038,5 +1038,10 @@ button.switch-to-advanced:hover, button.switch-to-simple:hover{
   #homepage-content {
     margin-left: 80px;
     margin-right: -93px;
+  }
 }
 /* minor fix for mobile search field on journals */
+/* code request from Charlie 7/11 - modified code provided by ExLibris */
+.section-content .md-chips .md-chip[data-facet-value="tlevel-open_access"]{
+display: none;
+}

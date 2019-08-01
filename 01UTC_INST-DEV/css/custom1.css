@@ -21,7 +21,7 @@ prm-request form .service-form-item:first-child, prm-request form span:first-chi
 #div-environment{
   text-align: center;
   padding:5px;
-}
+} 
 #div-environment.alert-danger{
   background-color: #f6dcdc;
   border-color: #f3d0d5;

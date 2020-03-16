@@ -22,15 +22,7 @@
       return vm.parentCtrl.iconLink;
     }
   }]);
-  //update template to include new URL for institution
-  app.component('prmLogoAfter', {
-    bindings: {
-      parentCtrl: '<'
-    },
-    controller: 'prmLogoAfterController',
-    template: '<div class="product-logo product-logo-local" layout="row" layout-align="start center" layout-fill id="banner"><a href="https://www.utc.edu/library/"><img class="logo-image" alt="{{::(\'nui.header.LogoAlt\' | translate)}}" ng-src="{{$ctrl.getIconLink()}}"/></a></div>'
-  });
-     //scroll down on mobile view advanced search
+  //scroll down on mobile view advanced search
   // change advanced search to jump to results
 app.controller('prmAdvancedSearchAfterController', function($scope) {
 // watch to see if advanced search is there
@@ -90,9 +82,17 @@ app.component('prmAdvancedSearchAfter', {
 });
 
   // END scroll code
+  //update template to include new URL for institution
+  app.component('prmLogoAfter', {
+    bindings: {
+      parentCtrl: '<'
+    },
+    controller: 'prmLogoAfterController',
+    template: '<div class="product-logo product-logo-local" layout="row" layout-align="start center" layout-fill id="banner"><a href="https://www.utc.edu/library/"><img class="logo-image" alt="{{::(\'nui.header.LogoAlt\' | translate)}}" ng-src="{{$ctrl.getIconLink()}}"/></a></div>'
+  });
   /*Emergency Banner
   app.component('prmSearchBarAfter', {
-   template: '<hr/><p style="text-align: center; font-size: 20px; color: white;">Please note that access to online resources will be unavailable this evening from 8pm-9pm.</p><hr/>'
+   template: '<div id="alert"></div>'
  });*/
  /* add Get help button */
  app.component('prmSearchResultListAfter', {
@@ -122,10 +122,13 @@ setInterval(function() {
 }
 /* add dev alert bar to top of page on 01UTC_INST:DEV */
 if ((window.location.href.indexOf("01UTC_INST:DEV") > -1 )&&(jQuery("#div-environment").length == 0)){
-  jQuery('body').prepend("<div id='div-environment' class='alert-danger'> | <strong>DEV</strong> environment | </div>")
+  //jQuery('body').prepend("<div id='div-environment' class='alert-danger'> | <strong>DEV</strong> environment | </div>")
 }
 if ((window.location.href.indexOf("sandbox01-na.primo.exlibrisgroup.com") > -1 )&&(jQuery("#div-environment").length == 0)){
   jQuery('body').prepend("<div id='div-environment' class='alert-info'> | <strong>SANDBOX</strong> environment | </div>")
+}
+if(jQuery("#alert").length == 0) {
+  jQuery('body').prepend("<div id='alert'></div>");
 }
 /* remove get help on new menu option for 'My Favorites' & 'Search History' */
 if (window.location.href.indexOf("section=") > -1){
@@ -138,9 +141,9 @@ if (window.location.href.indexOf("section=") > -1){
 //  jQuery("[aria-label='BrowseSearch']").text("Browse Search");
   //array to detect current tab
   var searchTabsList = {
-    "search?vid=01UTC_INST": "New Search",
+    "search?vid=01UTC_INST": "New Search, opens in a new window",
     "jsearch?": "Journal Search",
-    "CustomCourseReserves": "Course Reserves",
+    "search?tab=CustomCourseReserves": "Course Reserves, opens in a new window",
     "citationlinker": "Citation Lookup",
     "browse": "Browse Search",
     "dbsearch?": "Database Search"
@@ -156,10 +159,10 @@ if (window.location.href.indexOf("section=") > -1){
   });
 /* insert icon before advanced|basic search */
   if(jQuery("#advanced-search-icon").length == 0){
-  jQuery("<md-icon id='advanced-search-icon'><svg width='100%' height='100%' viewBox='-2 -4 24 24' y='72' xmlns='http://www.w3.org/2000/svg' fit='' preserveAspectRatio='xMidYMid meet' focusable='false'><polyline points='0 10 8.63 10 8.63 8 0 8'></polyline><polyline points='0 16 8.63 16 8.63 14 0 14'></polyline><polyline points='0 4 8.63 4 8.63 2 0 2'></polyline><path d='M17.17,18.17L14,15l-1.41,1.41L17.17,21l4.59-4.59L20.34,15M17.17,5.83L20.34,9l1.41-1.41L17.17,3,12.58,7.59,14,9Z' transform='translate(-2.24 -3)'></path></svg></md-icon>").insertBefore(".switch-to-advanced .layout-row span");
+  jQuery("<md-icon id='advanced-search-icon' md-svg-icon='primo-ui:close' aria-label='icon-close' class='md-primoExplore-theme' aria-hidden='true'><svg id='close' width='100%' height='100%' viewBox='0 0 24 24' y='240' xmlns='http://www.w3.org/2000/svg' fit='' preserveAspectRatio='xMidYMid meet' focusable='false'><path d='m 11.002979,20.902474 h 1.994042 v -7.905453 h 7.905453 V 11.002979 H 12.997021 V 3.0975256 H 11.002979 V 11.002979 H 3.0975256 v 1.994042 h 7.9054534 z'></path></svg></md-icon>").insertBefore(".switch-to-advanced .layout-row span");
 }
   if(jQuery("#basic-search-icon").length == 0){
-  jQuery("<md-icon id='basic-search-icon'><svg width='100%' height='100%' viewBox='-2 -4 24 24' y='72' xmlns='http://www.w3.org/2000/svg' fit='' preserveAspectRatio='xMidYMid meet' focusable='false'><polyline points='0 10 8.63 10 8.63 8 0 8'></polyline><path d='M21.76,5.41L20.34,4,17.17,7.17,14,4,12.58,5.41,17.17,10m-4.59,8.59L14,20l3.17-3.17L20.34,20l1.41-1.41L17.17,14Z' transform='translate(-2.24 -4)'></path></svg></md-icon></md-icon>").insertBefore(".switch-to-simple .layout-row span");
+  jQuery("<md-icon id='basic-search-icon'><svg id='advancedSearch' width='100%' height='100%' viewBox='0 0 24 24' y='240' xmlns='http://www.w3.org/2000/svg' fit='' preserveAspectRatio='xMidYMid meet' focusable='false'><path d='M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z'></path></svg></md-icon>").insertBefore(".switch-to-simple .layout-row span");
 }
 /*align advanced search select fields */
 jQuery("#advanced-search md-select-value").first().css( "margin-left", "70px" );
@@ -170,7 +173,7 @@ jQuery("#advanced-search md-select-value").first().css( "margin-left", "70px" );
   }else{
     jQuery('prm-alma-viewit-items').addClass('many');
 }
-/* grab input and appned to worldcat link
+/* grab input and append to worldcat link
 $( "#searchBar" ).keyup(function() {
   var inputString = jQuery('#searchBar').val();
   if (inputString){
@@ -179,4 +182,19 @@ $( "#searchBar" ).keyup(function() {
   }
 });
 */
-}, 100);// close setInterval(function()
+$.get("https://www.getrave.com/rss/utc/channel1", function(data) {
+  var $XML = $(data);
+  $XML.find("item").each(function() {
+      var $this = $(this),
+          item = {
+              title:       $this.find("title").text(),
+              link:        $this.find("link").text(),
+              description: $this.find("description").text(),
+              pubDate:     $this.find("pubDate").text()
+          };
+          jQuery("#alert:empty").append("<div id='utc-alert' class='alert alert-danger'><h2>" + item.title + "</h2><p><small>Posted on date " + item.pubDate + "</small></p><p>" + item.description + "</p><p><a class='btn btn-danger' href='" + item.link + "'>More information…</a></p><h3>COVID-19 Library Operations Update</h3><p>Check out the <a href='https://utc.edu/library/library-continuity/index.php'><strong>latest on currently available library services</strong></a>.</p></div>");
+          return false;
+  });
+});
+}, 100);//close setInterval(function()
+

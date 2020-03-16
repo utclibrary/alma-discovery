@@ -92,7 +92,7 @@ app.component('prmAdvancedSearchAfter', {
   });
   /*Emergency Banner
   app.component('prmSearchBarAfter', {
-   template: '<hr/><p style="text-align: center; font-size: 20px; color: white;">Please note that access to online resources will be unavailable this evening from 8pm-9pm.</p><hr/>'
+   template: '<div id="alert"></div>'
  });*/
  /* add Get help button */
  app.component('prmSearchResultListAfter', {
@@ -122,10 +122,13 @@ setInterval(function() {
 }
 /* add dev alert bar to top of page on 01UTC_INST:DEV */
 if ((window.location.href.indexOf("01UTC_INST:DEV") > -1 )&&(jQuery("#div-environment").length == 0)){
-  jQuery('body').prepend("<div id='div-environment' class='alert-danger'> | <strong>DEV</strong> environment | </div>")
+  //jQuery('body').prepend("<div id='div-environment' class='alert-danger'> | <strong>DEV</strong> environment | </div>")
 }
 if ((window.location.href.indexOf("sandbox01-na.primo.exlibrisgroup.com") > -1 )&&(jQuery("#div-environment").length == 0)){
   jQuery('body').prepend("<div id='div-environment' class='alert-info'> | <strong>SANDBOX</strong> environment | </div>")
+}
+if(jQuery("#alert").length == 0) {
+  jQuery('body').prepend("<div id='alert'></div>");
 }
 /* remove get help on new menu option for 'My Favorites' & 'Search History' */
 if (window.location.href.indexOf("section=") > -1){
@@ -170,7 +173,7 @@ jQuery("#advanced-search md-select-value").first().css( "margin-left", "70px" );
   }else{
     jQuery('prm-alma-viewit-items').addClass('many');
 }
-/* grab input and appned to worldcat link
+/* grab input and append to worldcat link
 $( "#searchBar" ).keyup(function() {
   var inputString = jQuery('#searchBar').val();
   if (inputString){
@@ -179,4 +182,19 @@ $( "#searchBar" ).keyup(function() {
   }
 });
 */
+$.get("https://www.getrave.com/rss/utc/channel1", function(data) {
+  var $XML = $(data);
+  $XML.find("item").each(function() {
+      var $this = $(this),
+          item = {
+              title:       $this.find("title").text(),
+              link:        $this.find("link").text(),
+              description: $this.find("description").text(),
+              pubDate:     $this.find("pubDate").text()
+          };
+          jQuery("#alert:empty").append("<div id='utc-alert' class='alert alert-danger'><h2>" + item.title + "</h2><p><small>Posted on date " + item.pubDate + "</small></p><p>" + item.description + "</p><p><a class='btn btn-danger' href='" + item.link + "'>More information…</a></p><h3>COVID-19 Library Operations Update</h3><p>Check out the <a href='https://utc.edu/library/library-continuity/index.php'><strong>latest on currently available library services</strong></a>.</p></div>");
+          return false;
+  });
+});
 }, 100);//close setInterval(function()
+

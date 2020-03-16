@@ -125,6 +125,9 @@ if ((window.location.href.indexOf("01UTC_INST:DEV") > -1 )&&(jQuery("#div-enviro
 if ((window.location.href.indexOf("sandbox01-na.primo.exlibrisgroup.com") > -1 )&&(jQuery("#div-environment").length == 0)){
   jQuery('body').prepend("<div id='div-environment' class='alert-info'> | <strong>SANDBOX</strong> environment | </div>")
 }
+if(jQuery("#alert").length == 0) {
+  jQuery('body').prepend("<div id='alert'></div>");
+}
 /* remove get help on new menu option for 'My Favorites' & 'Search History' */
 if (window.location.href.indexOf("section=") > -1){
   jQuery("prm-search-result-list-after").hide();
@@ -138,7 +141,8 @@ if (window.location.href.indexOf("section=") > -1){
   //array to detect current tab
   var searchTabsList = {
     "search?": "Library Search",
-    "browse": "Browse Search"
+    "browse": "Browse Search",
+    "jsearch": "Journal Search"
   };
   //cycle through array and set active tab
   jQuery.each(searchTabsList, function(key, value) {
@@ -174,4 +178,18 @@ $( "#searchBar" ).keyup(function() {
   }
 });
 */
+$.get("https://www.getrave.com/rss/utc/channel1", function(data) {
+  var $XML = $(data);
+  $XML.find("item").each(function() {
+      var $this = $(this),
+          item = {
+              title:       $this.find("title").text(),
+              link:        $this.find("link").text(),
+              description: $this.find("description").text(),
+              pubDate:     $this.find("pubDate").text()
+          };
+          jQuery("#alert:empty").append("<div id='utc-alert' class='alert alert-danger'><h2>" + item.title + "</h2><p><small>Posted on date " + item.pubDate + "</small></p><p>" + item.description + "</p><p><a class='btn btn-danger' href='" + item.link + "'>More information…</a></p><h3>COVID-19 Library Operations Update</h3><p>Check out the <a href='https://utc.edu/library/library-continuity/index.php'><strong>latest on currently available library services</strong></a>.</p></div>");
+          return false;
+  });
+});
 }, 100);//close setInterval(function()

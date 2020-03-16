@@ -141,9 +141,9 @@ if (window.location.href.indexOf("section=") > -1){
 //  jQuery("[aria-label='BrowseSearch']").text("Browse Search");
   //array to detect current tab
   var searchTabsList = {
-    "search?vid=01UTC_INST": "New Search, opens in a new window",
+    "search?vid=01UTC_INST": "New Search",
     "jsearch?": "Journal Search",
-    "search?tab=CustomCourseReserves": "Course Reserves, opens in a new window",
+    "search?tab=CustomCourseReserves": "Course Reserves",
     "citationlinker": "Citation Lookup",
     "browse": "Browse Search",
     "dbsearch?": "Database Search"

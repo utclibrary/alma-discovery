@@ -128,7 +128,8 @@ if ((window.location.href.indexOf("sandbox01-na.primo.exlibrisgroup.com") > -1 )
   jQuery('body').prepend("<div id='div-environment' class='alert-info'> | <strong>SANDBOX</strong> environment | </div>")
 }
 if(jQuery("#alert").length == 0) {
-  jQuery('body').prepend("<div id='alert'></div>");
+  const newLocal = '.header';
+  jQuery("<div id='alert'></div>").insertAfter(newLocal);
 }
 /* remove get help on new menu option for 'My Favorites' & 'Search History' */
 if (window.location.href.indexOf("section=") > -1){
@@ -192,9 +193,12 @@ $.get("https://www.getrave.com/rss/utc/channel1", function(data) {
               description: $this.find("description").text(),
               pubDate:     $this.find("pubDate").text()
           };
-          jQuery("#alert:empty").append("<div id='utc-alert' class='alert alert-danger'><h2>" + item.title + "</h2><p><small>Posted on date " + item.pubDate + "</small></p><p>" + item.description + "</p><p><a class='btn btn-danger' href='" + item.link + "'>More information…</a></p><h3>COVID-19 Library Operations Update</h3><p>Check out the <a href='https://utc.edu/library/library-continuity/index.php'><strong>latest on currently available library services</strong></a>.</p></div>");
+          jQuery("#alert:empty").append("<div id='utc-alert' class='alert alert-danger'><span class='close' style='float: right;cursor:pointer;'>x</span><h2>" + item.title + "</h2><p><small>Posted on date " + item.pubDate + "</small></p><p>" + item.description + "</p><p><a class='btn btn-danger' href='" + item.link + "'>More information…</a></p><h3>COVID-19 Library Operations Update</h3><p>Check out the <a href='https://utc.edu/library/library-continuity/index.php'><strong>latest on currently available library services</strong></a>.</p></div>");
           return false;
   });
 });
+$(document).on('click','.close', function() {
+  $("#utc-alert").fadeOut();
+});  
 }, 100);//close setInterval(function()
 

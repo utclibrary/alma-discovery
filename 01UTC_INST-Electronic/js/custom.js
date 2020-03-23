@@ -141,9 +141,10 @@ if (window.location.href.indexOf("section=") > -1){
 //  jQuery("[aria-label='BrowseSearch']").text("Browse Search");
   //array to detect current tab
   var searchTabsList = {
-    "search?": "Library Search",
+    "search?": "New Search",
     "browse": "Browse Search",
-    "jsearch": "Journal Search"
+    "jsearch": "Journal Search",
+    "citationlinker": "Citation Lookup"
   };
   //cycle through array and set active tab
   jQuery.each(searchTabsList, function(key, value) {

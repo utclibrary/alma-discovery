@@ -1039,3 +1039,7 @@ button.switch-to-advanced:hover, button.switch-to-simple:hover{
     margin-right: -93px;
   }
 }
+/* hide RefWorks from menu */
+.my-refworks-ctm, .my-refworks-separator-ctm {
+  display: none;
+}

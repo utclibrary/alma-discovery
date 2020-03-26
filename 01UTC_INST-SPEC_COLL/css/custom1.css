@@ -1052,6 +1052,9 @@ button.switch-to-advanced:hover, button.switch-to-simple:hover{
     z-index: 1000;
     right: 40px;
 }
+#homepage-content md-card-content .libraryh3lp{
+  text-align: center;
+}
 /* END Get help button */
 /* hacky fix to center homepage on some screen sizes */
 @media (max-width: 1599px) and (min-width: 1280px){

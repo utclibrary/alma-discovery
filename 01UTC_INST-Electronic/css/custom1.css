@@ -966,10 +966,10 @@ prm-alma-viewit-items md-list md-list-item .in-element-dialog-context:hover, prm
   background: #e0aa0f;
   color:black;
 }
-prm-alma-viewit-items md-list md-list-item .in-element-dialog-context a, prm-resource-recommender md-card a{
+prm-alma-viewit-items md-list md-list-item .in-element-dialog-context p span prm-icon, prm-alma-viewit-items md-list md-list-item .in-element-dialog-context a, prm-alma-viewit-items md-list md-list-item .in-element-dialog-context p, prm-resource-recommender md-card a{
   color: white;
 }
-prm-alma-viewit-items md-list md-list-item .in-element-dialog-context:hover a{
+prm-alma-viewit-items md-list md-list-item .in-element-dialog-context:hover a, prm-alma-viewit-items md-list md-list-item .in-element-dialog-context:hover p,prm-alma-viewit-items md-list md-list-item .in-element-dialog-context:hover p span prm-icon{
   color: #00386b;
 }
 /* Advanced search button
@@ -1059,6 +1059,9 @@ button.switch-to-advanced:hover, button.switch-to-simple:hover{
     text-align: center;
     z-index: 1000;
     right: 40px;
+}
+#homepage-content md-card-content .libraryh3lp{
+  text-align: center;
 }
 /* END Get help button */
 /* hacky fix to center homepage on some screen sizes */

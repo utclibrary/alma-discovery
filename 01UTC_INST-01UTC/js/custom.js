@@ -92,7 +92,7 @@ app.component('prmAdvancedSearchAfter', {
   });
   /*Emergency Banner
   app.component('prmSearchBarAfter', {
-   template: '<div id="alert"></div>'
+  template: '<div id="alert"></div>'
  });*/
  /* add Get help button */
  app.component('prmSearchResultListAfter', {
@@ -122,10 +122,13 @@ setInterval(function() {
 }
 /* add dev alert bar to top of page on 01UTC_INST:DEV */
 if ((window.location.href.indexOf("01UTC_INST:DEV") > -1 )&&(jQuery("#div-environment").length == 0)){
-  //jQuery('body').prepend("<div id='div-environment' class='alert-danger'> | <strong>DEV</strong> environment | </div>")
+  jQuery('body').prepend("<div id='div-environment' class='alert-danger'> | <strong>DEV</strong> environment | </div>")
 }
 if ((window.location.href.indexOf("sandbox01-na.primo.exlibrisgroup.com") > -1 )&&(jQuery("#div-environment").length == 0)){
   jQuery('body').prepend("<div id='div-environment' class='alert-info'> | <strong>SANDBOX</strong> environment | </div>")
+}
+if ((window.location.href.indexOf("http://localhost:8003/") > -1 )&&(jQuery("#div-environment").length == 0)){
+  jQuery('body').prepend("<div id='div-environment' class='alert-success'> | <strong>LOCAL DEV</strong> environment | </div>")
 }
 if(jQuery("#alert").length == 0) {
   const newLocal = '.header';
@@ -201,6 +204,5 @@ $.get("https://www.getrave.com/rss/utc/channel1", function(data) {
 });
 $(document).on('click','.close', function() {
   $("#utc-alert").fadeOut();
-});  
+});
 }, 100);//close setInterval(function()
-

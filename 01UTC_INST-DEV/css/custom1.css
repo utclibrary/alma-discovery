@@ -11,12 +11,6 @@ opacity: 1;
     transform: scaleX(1);
     transition: all 0s 0s;
 }
-
-/* hide location selection from request form item level
-prm-request form .service-form-item:first-child, prm-request form span:first-child{
-  display: none;
-}
-*/
 /* ENVIRONMENT alert box styling */
 .alert-danger{
   padding: 1em;
@@ -24,6 +18,13 @@ prm-request form .service-form-item:first-child, prm-request form span:first-chi
   color: #802020;
   background-color: #f6dcdc;
   border-color: #f3d0d5;
+}
+.alert-success{
+  padding: 1em;
+  margin-bottom:0px;
+  color: #25491A;
+  background-color: #bde3b2;
+  border-color: #b8dd9f;
 }
 #utc-alert h2{
   margin: 10px 0;
@@ -50,7 +51,7 @@ prm-request form .service-form-item:first-child, prm-request form span:first-chi
 #div-environment{
   text-align: center;
   padding:5px;
-} 
+}
 #div-environment.alert-danger{
   background-color: #f6dcdc;
   border-color: #f3d0d5;
@@ -89,10 +90,13 @@ content: "Browse by Volume";
 padding:6px;
 font-weight:bold;
 }
-
 /* style advanced search icon */
 #advanced-search-icon,#basic-search-icon{
   color:grey;
+}
+/* hide location selection from request form item level */
+prm-request form .service-form-item:first-child, prm-request form span:first-child{
+  display: none;
 }
 /* fix search scope color */
 .search-elements-wrapper .search-scope{
@@ -259,14 +263,13 @@ md-input-container.md-input-has-value label:not(.md-no-float) {
 #facets .available-facets:first-of-type{
   background-color: pink;
 }
-prm-facet-exact [title="Availability"],[aria-label="Availability expand"],[aria-label="primo-ui:earth"] {
+prm-facet-exact [title="Availability"],[aria-label="Availability expand"] {
   display:none;
 }
 prm-facet-exact [aria-label="From"]{
   min-width: 100px;
 }
-div [aria-label="Include Held by library"], [title="Held by library"],
-[aria-label="Exclude Held by library"],[aria-label="Include Held by library selection"] {
+div [aria-label="Include Held by library"], [title="Held by library"], [aria-label="Exclude Held by library"],[aria-label="Include Held by library selection"],[aria-label="primo-ui:earth"] {
   display:none;
 }
 prm-location-items h3.section-title span:nth-child(1){
@@ -1075,5 +1078,9 @@ button.switch-to-advanced:hover, button.switch-to-simple:hover{
 /* minor fix for mobile search field on journals */
 /* code request from Charlie 7/11 - modified code provided by ExLibris */
 .section-content .md-chips .md-chip[data-facet-value="tlevel-open_access"]{
-display: none;
+  display: none;
+  }
+/* hide RefWorks from menu */
+.my-refworks-ctm, .my-refworks-separator-ctm {
+  display: none;
 }

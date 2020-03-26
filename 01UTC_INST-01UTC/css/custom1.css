@@ -19,6 +19,13 @@ opacity: 1;
   background-color: #f6dcdc;
   border-color: #f3d0d5;
 }
+.alert-success{
+  padding: 1em;
+  margin-bottom:0px;
+  color: #25491A;
+  background-color: #bde3b2;
+  border-color: #b8dd9f;
+}
 #utc-alert h2{
   margin: 10px 0;
     font-family: Exo, sans-serif;
@@ -151,6 +158,7 @@ prm-logo-after a:hover{
 #searchBar{
   margin-right: 100px;
 }
+*/
 /* fix logo on header overlapping menu */
 @media (max-width: 959px) and (min-width: 600px), (max-width: 450px){
   prm-logo .logo-image, prm-logo img {
@@ -1056,6 +1064,9 @@ button.switch-to-advanced:hover, button.switch-to-simple:hover{
     z-index: 1000;
     right: 40px;
 }
+#homepage-content md-card-content .libraryh3lp{
+  text-align: center;
+}
 /* END Get help button */
 /* hacky fix to center homepage on some screen sizes */
 @media (max-width: 1599px) and (min-width: 1280px){
@@ -1066,5 +1077,9 @@ button.switch-to-advanced:hover, button.switch-to-simple:hover{
 }
 /* code request from Charlie 7/11 - modified code provided by ExLibris */
 .section-content .md-chips .md-chip[data-facet-value="tlevel-open_access"]{
-display: none;
+  display: none;
+  }
+/* hide RefWorks from menu */
+.my-refworks-ctm, .my-refworks-separator-ctm {
+  display: none;
 }

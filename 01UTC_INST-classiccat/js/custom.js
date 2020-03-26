@@ -88,11 +88,11 @@ app.component('prmAdvancedSearchAfter', {
       parentCtrl: '<'
     },
     controller: 'prmLogoAfterController',
-    template: '<div class="product-logo product-logo-local" layout="row" layout-align="start center" layout-fill id="banner"><a href="#"><img class="logo-image" alt="{{::(\'nui.header.LogoAlt\' | translate)}}" ng-src="{{$ctrl.getIconLink()}}"/></a></div>'
+    template: '<div class="product-logo product-logo-local" layout="row" layout-align="start center" layout-fill id="banner"><a href="https://www.utc.edu/library/"><img class="logo-image" alt="{{::(\'nui.header.LogoAlt\' | translate)}}" ng-src="{{$ctrl.getIconLink()}}"/></a></div>'
   });
   /*Emergency Banner
   app.component('prmSearchBarAfter', {
-   template: '<hr/><p style="text-align: center; font-size: 20px; color: white;">Please note that access to online resources will be unavailable this evening from 8pm-9pm.</p><hr/>'
+  template: '<div id="alert"></div>'
  });*/
  /* add Get help button */
  app.component('prmSearchResultListAfter', {
@@ -109,6 +109,8 @@ script.text = "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Da
 document.head.appendChild(script);
 /* run this block at set intervals */
 setInterval(function() {
+  //hide parent div of facet Include Held by library selection
+  jQuery("[data-facet-value='tlevel-available_p']").hide();
   //chat box only load on pages with chat box
   if (window.location.href.indexOf("/discovery/search?") > -1) {
     var x = document.createElement("script");
@@ -125,13 +127,19 @@ if ((window.location.href.indexOf("01UTC_INST:DEV") > -1 )&&(jQuery("#div-enviro
 if ((window.location.href.indexOf("sandbox01-na.primo.exlibrisgroup.com") > -1 )&&(jQuery("#div-environment").length == 0)){
   jQuery('body').prepend("<div id='div-environment' class='alert-info'> | <strong>SANDBOX</strong> environment | </div>")
 }
+if ((window.location.href.indexOf("http://localhost:8003/") > -1 )&&(jQuery("#div-environment").length == 0)){
+  jQuery('body').prepend("<div id='div-environment' class='alert-success'> | <strong>LOCAL DEV</strong> environment | </div>")
+}
+if(jQuery("#alert").length == 0) {
+  const newLocal = '.header';
+  jQuery("<div id='alert'></div>").insertAfter(newLocal);
+}
 /* remove get help on new menu option for 'My Favorites' & 'Search History' */
 if (window.location.href.indexOf("section=") > -1){
   jQuery("prm-search-result-list-after").hide();
 }else{
   jQuery("prm-search-result-list-after").show();
 }
-
 /* detect and highlight current tab */
   //fix issue with browse search text
 //  jQuery("[aria-label='BrowseSearch']").text("Browse Search");
@@ -165,7 +173,7 @@ jQuery("#advanced-search md-select-value").first().css( "margin-left", "70px" );
   }else{
     jQuery('prm-alma-viewit-items').addClass('many');
 }
-/* grab input and appned to worldcat link
+/* grab input and append to worldcat link
 $( "#searchBar" ).keyup(function() {
   var inputString = jQuery('#searchBar').val();
   if (inputString){
@@ -174,4 +182,23 @@ $( "#searchBar" ).keyup(function() {
   }
 });
 */
+$.get("https://www.getrave.com/rss/utc/channel1", function(data) {
+  var $XML = $(data);
+  $XML.find("item").each(function() {
+      var $this = $(this),
+          item = {
+              title:       $this.find("title").text(),
+              link:        $this.find("link").text(),
+              description: $this.find("description").text(),
+              pubDate:     $this.find("pubDate").text()
+          };
+          if (item.title != "No emergencies at this time"){
+            jQuery("#alert:empty").append("<div id='utc-alert' class='alert alert-danger'><span class='close' style='float: right;cursor:pointer;'>x</span><h2>" + item.title + "</h2><p><small>Posted on date " + item.pubDate + "</small></p><p>" + item.description + "</p><p><a class='btn btn-danger' href='" + item.link + "'>More information…</a></p><h3>COVID-19 Library Operations Update</h3><p>Check out the <a href='https://utc.edu/library/library-continuity/index.php'><strong>latest on currently available library services</strong></a>.</p></div>");
+          }
+          return false;
+  });
+});
+$(document).on('click','.close', function() {
+  $("#utc-alert").fadeOut();
+}); 
 }, 100);//close setInterval(function()

@@ -2,6 +2,15 @@
 prm-topbar .isDeposit, prm-topbar .isServicePage, prm-topbar .isSummonOverAlma {
     display: inline;
 }
+/* checkboxes show by default on facets */
+.multiselect-facet-group.multiselect-inactive
+.md-chip md-checkbox {
+opacity: 1;
+    visibility: visible;
+    z-index: 100;
+    transform: scaleX(1);
+    transition: all 0s 0s;
+}
 /* ENVIRONMENT alert box styling */
 .alert-danger{
   padding: 1em;
@@ -9,6 +18,13 @@ prm-topbar .isDeposit, prm-topbar .isServicePage, prm-topbar .isSummonOverAlma {
   color: #802020;
   background-color: #f6dcdc;
   border-color: #f3d0d5;
+}
+.alert-success{
+  padding: 1em;
+  margin-bottom:0px;
+  color: #25491A;
+  background-color: #bde3b2;
+  border-color: #b8dd9f;
 }
 #utc-alert h2{
   margin: 10px 0;
@@ -958,10 +974,10 @@ prm-alma-viewit-items md-list md-list-item .in-element-dialog-context:hover, prm
   background: #e0aa0f;
   color:black;
 }
-prm-alma-viewit-items md-list md-list-item .in-element-dialog-context a, prm-resource-recommender md-card a{
+prm-alma-viewit-items md-list md-list-item .in-element-dialog-context p span prm-icon, prm-alma-viewit-items md-list md-list-item .in-element-dialog-context a, prm-alma-viewit-items md-list md-list-item .in-element-dialog-context p, prm-resource-recommender md-card a{
   color: white;
 }
-prm-alma-viewit-items md-list md-list-item .in-element-dialog-context:hover a{
+prm-alma-viewit-items md-list md-list-item .in-element-dialog-context:hover a, prm-alma-viewit-items md-list md-list-item .in-element-dialog-context:hover p,prm-alma-viewit-items md-list md-list-item .in-element-dialog-context:hover p span prm-icon{
   color: #00386b;
 }
 /* Advanced search button
@@ -1062,4 +1078,12 @@ button.switch-to-advanced:hover, button.switch-to-simple:hover{
     margin-left: 80px;
     margin-right: -93px;
   }
+}
+/* code request from Charlie 7/11 - modified code provided by ExLibris */
+.section-content .md-chips .md-chip[data-facet-value="tlevel-open_access"]{
+  display: none;
+  }
+/* hide RefWorks from menu */
+.my-refworks-ctm, .my-refworks-separator-ctm {
+  display: none;
 }

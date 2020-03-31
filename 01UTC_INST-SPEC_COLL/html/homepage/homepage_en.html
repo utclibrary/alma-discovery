@@ -1,6 +1,9 @@
 <!-- /html/homepage/homepage_en.html -->
 <md-content id="homepage-content" layout-xs="column" layout="row" class="layout-xs-column layout-row">
-  <div flex="60" layout="column" class="layout-column flex-30">
+  <div flex="" layout="column" class="layout-column flex">
+    <!--
+      <div flex-xs flex="40" layout="column" class="layout-column flex-xs flex-50">
+      -->
 
     <md-card class="default-card">
       <md-card-title>
@@ -14,7 +17,11 @@
       </md-card-content>
     </md-card>
   </div>
-  <div flex-xs flex="40" layout="column" class="layout-column flex-xs flex-70">
+  <div flex="" layout="column" class="layout-column flex">
+<!--
+  <div flex-xs flex="40" layout="column" class="layout-column flex-xs flex-50">
+  -->
+    <!-- hide quick links due to COVID-19 
     <md-card class="default-card">
       <md-card-title class="homepage">
         <md-card-title-text>
@@ -48,6 +55,25 @@
         <a class="button-confirm md-button md-primoExplore-theme md-ink-ripple md-raised"
         href="https://www.utc.edu/library/services/students/research-appointments.php" style="width: 95%;">
             Schedule a Research Appointment</a>
+      </md-card-content>
+    </md-card>
+        -->
+    <md-card class="default-card">
+      <md-card-title class="homepage">
+        <md-card-title-text>
+          <span class="md-headline">Contact UTC Library</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <ul>
+          <li><b>Call:</b> (423) 425-4510</li>
+          <li><b>Text:</b> (423) 521-0564</li>
+          <li><b>Email:</b> <a href="mailto:library@utc.edu">library@utc.edu</a></li>
+          <li>Submit a <a href="https://utc.edu/library/about/contact.php" target="_blank">contact form</a></li>
+        </ul>
+        <a class="button-confirm md-button md-primoExplore-theme md-ink-ripple md-raised"
+        href="https://www.utc.edu/library/services/students/research-appointments.php" style="width: 95%;" target="_blank">
+            Make an Online Appointment</a>
       </md-card-content>
     </md-card>
   </div>

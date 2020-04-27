@@ -185,7 +185,7 @@ $( "#searchBar" ).keyup(function() {
     console.log(inputString);
   }
 });
-*/
+
 $.get("https://www.getrave.com/rss/utc/channel1", function(data) {
   var $XML = $(data);
   $XML.find("item").each(function() {
@@ -197,6 +197,7 @@ $.get("https://www.getrave.com/rss/utc/channel1", function(data) {
               pubDate:     $this.find("pubDate").text()
           };
           if (item.title != "No emergencies at this time"){
+            if 
             jQuery("#alert:empty").append("<div id='utc-alert' class='alert alert-danger'><span class='close' style='float: right;cursor:pointer;'>x</span><h2>" + item.title + "</h2><p><small>Posted on date " + item.pubDate + "</small></p><p>" + item.description + "</p><p><a class='btn btn-danger' href='" + item.link + "'>More information…</a></p></div>");
           }
           return false;
@@ -207,5 +208,6 @@ jQuery(document).on('click','.close', function() {
   jQuery("#utc-alert").fadeOut();
   jQuery("#libraryAlert").fadeOut();
 });
+*/
 }, 100);//close setInterval(function()
 

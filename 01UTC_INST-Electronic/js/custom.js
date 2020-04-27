@@ -181,7 +181,7 @@ $( "#searchBar" ).keyup(function() {
     console.log(inputString);
   }
 });
-*/
+
 $.get("https://www.getrave.com/rss/utc/channel1", function(data) {
   var $XML = $(data);
   $XML.find("item").each(function() {
@@ -203,4 +203,5 @@ jQuery(document).on('click','.close', function() {
   jQuery("#utc-alert").fadeOut();
   jQuery("#libraryAlert").fadeOut();
 });
+*/
 }, 100);//close setInterval(function()

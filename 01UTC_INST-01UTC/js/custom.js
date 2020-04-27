@@ -130,10 +130,12 @@ if ((window.location.href.indexOf("sandbox01-na.primo.exlibrisgroup.com") > -1 )
 if ((window.location.href.indexOf("http://localhost:8003/") > -1 )&&(jQuery("#div-environment").length == 0)){
   jQuery('body').prepend("<div id='div-environment' class='alert-success'> | <strong>LOCAL DEV</strong> environment | </div>")
 }
+/*
 if(jQuery("#alert").length == 0) {
   const newLocal = '.header';
   jQuery("<div id='alert'></div><div id='libAlert'></div>").insertAfter(newLocal);
 }
+*/
 /* remove get help on new menu option for 'My Favorites' & 'Search History' */
 if (window.location.href.indexOf("section=") > -1){
   jQuery("prm-search-result-list-after").hide();
@@ -185,7 +187,7 @@ $( "#searchBar" ).keyup(function() {
     console.log(inputString);
   }
 });
-*/
+
 $.get("https://www.getrave.com/rss/utc/channel1", function(data) {
   var $XML = $(data);
   $XML.find("item").each(function() {
@@ -197,14 +199,18 @@ $.get("https://www.getrave.com/rss/utc/channel1", function(data) {
               pubDate:     $this.find("pubDate").text()
           };
           if (item.title != "No emergencies at this time"){
-            jQuery("#alert:empty").append("<div id='utc-alert' class='alert alert-danger'><span class='close' style='float: right;cursor:pointer;'>x</span><h2>" + item.title + "</h2><p><small>Posted on date " + item.pubDate + "</small></p><p>" + item.description + "</p><p><a class='btn btn-danger' href='" + item.link + "'>More information…</a></p></div>");
+            if (window.location.href.indexOf("collectionDiscovery") === -1 ){
+              jQuery("#alert:empty").append("<div id='utc-alert' class='alert alert-danger'><span class='close' style='float: right;cursor:pointer;'>x</span><h2>" + item.title + "</h2><p><small>Posted on date " + item.pubDate + "</small></p><p>" + item.description + "</p><p><a class='btn btn-danger' href='" + item.link + "'>More information…</a></p></div>");
+            }
           }
           return false;
   });
 });
+
 jQuery("#libAlert:empty").append('<!-- BEGIN temp COVID-19 Library Alert --><div id="libraryAlert"><div id="utc-alert" style="margin:0;color:#802020;" class="alert alert-danger"><span class="close" style="float: right;cursor:pointer;">x</span><h3 style="margin-top:0;color:#802020">COVID-19 Library Operations Update</h3><p style="margin: 0;">Check out the <a href="https://utc.edu/library/library-continuity/index.php"><strong>latest on currently available library services</strong></a>.</p></div></div><!-- END temp COVID-19 Library Alert -->');
 jQuery(document).on('click','.close', function() {
   jQuery("#utc-alert").fadeOut();
   jQuery("#libraryAlert").fadeOut();
 });
+*/
 }, 100);//close setInterval(function()

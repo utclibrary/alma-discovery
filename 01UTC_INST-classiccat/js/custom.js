@@ -198,7 +198,7 @@ $.get("https://www.getrave.com/rss/utc/channel1", function(data) {
           return false;
   });
 });
-jQuery("#libAlert:empty").append('<!-- BEGIN temp COVID-19 Library Alert --><div id="libraryAlert"><div id="utc-alert" style="margin:0;color:#802020;" class="alert alert-danger"><span class="close" style="float: right;cursor:pointer;">x</span><h3 style="margin-top:0;color:#802020">COVID-19 Library Operations Update</h3><p style="margin: 0;">Check out the <a href="https://utc.edu/library/library-continuity/index.php"><strong>latest on currently available library services</strong></a>.</p></div></div><!-- END temp COVID-19 Library Alert -->');
+
 jQuery(document).on('click','.close', function() {
   jQuery("#utc-alert").fadeOut();
   jQuery("#libraryAlert").fadeOut();

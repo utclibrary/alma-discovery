@@ -160,10 +160,10 @@ prm-logo-after a:hover{
 }
 */
 /* fix logo on header overlapping menu */
-@media (max-width: 959px) and (min-width: 600px), (max-width: 450px){
+@media (max-width: 1080px) and (min-width: 600px), (max-width: 450px){
   prm-logo .logo-image, prm-logo img {
     margin-top: -35px;
-    clip: rect(0px,54px,55px,0px);
+    clip: rect(0px,44px,55px,0px);
     position: absolute;
 }
 }

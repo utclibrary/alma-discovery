@@ -1087,3 +1087,7 @@ button.switch-to-advanced:hover, button.switch-to-simple:hover{
 .my-refworks-ctm, .my-refworks-separator-ctm {
   display: none;
 }
+/* hide Endnote Encoding */
+#action_list > div > prm-full-view-service-container > div.section-body > prm-action-list > prm-action-container > prm-export-ris > div > md-content > form > div.layout-full-width.layout-align-center-center.layout-row{
+  display: none;
+}

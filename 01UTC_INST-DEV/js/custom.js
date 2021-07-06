@@ -149,7 +149,7 @@ if (window.location.href.indexOf("section=") > -1){
     "jsearch?": "Journal Search",
     "search?tab=CustomCourseReserves": "Course Reserves, opens in a new window",
     "citationlinker": "Citation Lookup",
-    "browse": "Browse Search",
+    "browse": "UTC Library Browse Search",
     "dbsearch?": "Database Search"
   };
   //cycle through array and set active tab

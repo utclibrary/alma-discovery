@@ -111,15 +111,7 @@ document.head.appendChild(script);
 setInterval(function() {
   //hide parent div of facet Include Held by library selection
   jQuery("[data-facet-value='tlevel-available_p']").hide();
-  //chat box only load on pages with chat box
-  if (window.location.href.indexOf("/discovery/search?") > -1) {
-    var x = document.createElement("script");
-    x.type = "text/javascript";
-    x.async = true;
-    x.src = (document.location.protocol === "https:" ? "https://" : "http://") + "us.libraryh3lp.com/js/libraryh3lp.js?15293";
-    var y = document.getElementsByTagName("script")[0];
-    y.parentNode.insertBefore(x, y);
-}
+
 /* add dev alert bar to top of page on 01UTC_INST:DEV */
 if ((window.location.href.indexOf("01UTC_INST:DEV") > -1 )&&(jQuery("#div-environment").length == 0)){
   jQuery('body').prepend("<div id='div-environment' class='alert-danger'> | <strong>DEV</strong> environment | </div>")
@@ -214,3 +206,8 @@ jQuery(document).on('click','.close', function() {
 });
 */
 }, 100);//close setInterval(function()
+if (window.location.href.indexOf("/discovery/search?") > -1) {
+  var x = document.createElement("script"); x.type = "text/javascript"; x.async = true;
+  x.src = (document.location.protocol === "https:" ? "https://" : "https://") + "us.libraryh3lp.com/js/libraryh3lp.js?14392"
+  var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
+}

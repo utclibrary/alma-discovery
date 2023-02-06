@@ -210,3 +210,10 @@ if (window.location.href.indexOf("/discovery/search?") > -1) {
   x.src = (document.location.protocol === "https:" ? "https://" : "https://") + "us.libraryh3lp.com/js/libraryh3lp.js?14392"
   var y = document.getElementsByTagName("script")[0]; y.parentNode.insertBefore(x, y);
 }
+if (window.location.href.indexOf("&primosearchsubmit=") > -1) {
+  console.log("bingo");
+  var currentUrl = window.location.href;
+  var updatedUrl = currentUrl.replace('&primosearchsubmit=','');
+  window.location.replace(updatedUrl);
+  console.log("done");
+}

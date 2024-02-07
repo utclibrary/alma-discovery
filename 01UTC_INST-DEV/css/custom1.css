@@ -98,6 +98,10 @@ font-weight:bold;
 prm-request form .service-form-item:first-child, prm-request form span:first-child{
   display: none;
 }
+/* fix for request form radio buttons text hidden */
+prm-request form div.md-label span{
+  display: unset;
+}
 /* fix search scope color */
 .search-elements-wrapper .search-scope{
   background-color: #e0aa0f;
@@ -1084,11 +1088,7 @@ button.switch-to-advanced:hover, button.switch-to-simple:hover{
 .my-refworks-ctm, .my-refworks-separator-ctm {
   display: none;
 }
-/* hide Endnote Encoding 
+/* hide Endnote Encoding */
 #action_list > div > prm-full-view-service-container > div.section-body > prm-action-list > prm-action-container > prm-export-ris > div > md-content > form > div.layout-full-width.layout-align-center-center.layout-row{
   display: none;
 }
-*/
-prm-export-ris div.layout-full-width.layout-align-center-center.layout-row {
-  display: none;
-  }
